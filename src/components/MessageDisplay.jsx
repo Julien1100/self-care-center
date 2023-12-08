@@ -1,8 +1,9 @@
 import React from "react";
+import "../css/MessageDisplay.css";
 
 const MessageDisplay = ({ currentData, meditateImage }) => {
   return (
-    <div>
+    <div className="message-display">
       {currentData ? (
         <div>
           <p>{currentData.text}</p>
