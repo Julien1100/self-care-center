@@ -1,4 +1,6 @@
 import { useState } from "react";
+import MessageSelector from "./components/MessageSelector";
+import MessageDisplay from "./components/MessageDisplay";
 import meditate from "./assets/meditate.svg";
 
 function App() {
@@ -93,42 +95,14 @@ function App() {
     <>
       <h1>✨ Self Care Center ✨</h1>
 
-      <div className="message-selector">
-        <h3>Which type of message?</h3>
-        <form className="type-selector">
-          <input
-            type="radio"
-            name="message"
-            value="Affirmation"
-            checked={currentType === "Affirmation"}
-            onChange={() => handleTypeChange("Affirmation")}
-          />
-          <label htmlFor="affirmation">affirmation</label>
+      <MessageSelector
+        currentType={currentType}
+        handleTypeChange={handleTypeChange}
+        getRandomData={getRandomData}
+        setCurrentData={setCurrentData}
+      />
 
-          <input
-            type="radio"
-            name="message"
-            value="Mantra"
-            checked={currentType === "Mantra"}
-            onChange={() => handleTypeChange("Mantra")}
-          />
-          <label htmlFor="mantra">mantra</label>
-        </form>
-        <button onClick={() => setCurrentData(getRandomData(currentType))}>
-          Recieve Message
-        </button>
-
-        {currentData ? (
-          <div>
-            <p>{currentData.text}</p>
-          </div>
-        ) : (
-          // L'image apparaît uniquement lorsque currentData est null
-          <div>
-            <img src={meditate} alt="Affirmation/Mantra" />
-          </div>
-        )}
-      </div>
+      <MessageDisplay currentData={currentData} meditateImage={meditate} />
     </>
   );
 }
