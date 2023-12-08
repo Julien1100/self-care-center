@@ -9,10 +9,9 @@
   --black: #000000;
   line-height: 1.5;
   font-weight: 400;
+  color: var(--white);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: linear-gradient(var(--dark-blue), var(--light-blue), var(--light-yellow));
 }
 
 * {
@@ -22,9 +21,14 @@
 }
 
 body {
+  padding-top: 25px;
   height: 100vh;
   display: flex;
   justify-content: center;
+}
+
+h1 {
+  text-align: center;
 }
 
 img {

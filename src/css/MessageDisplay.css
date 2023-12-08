@@ -1,0 +1,17 @@
+.message-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  width: 45vw;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 15px;
+  text-align: center;
+  height: 120px;
+}
+
+img {
+  display: block;
+  height: 100%;
+}
